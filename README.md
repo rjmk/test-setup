@@ -9,9 +9,9 @@ Use `scratch.js` to explore requests, responses and the rest of the node HTTP mo
 It logs the following in the terminal:
   * the request received by the server
   * the response the server has sent
+
 You can alter the request object and see how the response changes.
 You can write code without tests here, but **you can't copy any code from the file.**
-
 You should be happy for all the code in `scratch.js` to be deleted at any point --
 it's for you to learn what's possible.
 
