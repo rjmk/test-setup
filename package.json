@@ -1,21 +1,27 @@
 {
-  "name": "blogplatform",
+  "name": "test-setup",
   "version": "1.0.0",
-  "description": "starter kit for blog platform",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "shot": "^1.4.2"
-  },
-  "devDependencies": {
-    "mocha": "^2.2.0"
-  },
   "scripts": {
-    "test": "mocha",
-    "start": "node server.js"
+    "test": "tape test/*.js",
+    "practise": "node scratch.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjmk/test-setup.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rjmk/test-setup/issues"
+  },
+  "homepage": "https://github.com/rjmk/test-setup#readme",
+  "devDependencies": {
+    "shot": "^1.6.1",
+    "tape": "^4.2.0"
+  }
 }

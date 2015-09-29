@@ -1,26 +1,32 @@
-# Elevator-Mechanic
+# Test Setup
 
-There shouldn't be much here that you haven't seen before. There is a simple [HTTP node server](https://nodejs.org/api/http.html).
+Clone this repo to get yourself setup for some TDD for a node server.
+`test/handler.js` contains a test that is failing!
+Your first job is to make it pass.
 
-The handler has been separated from the creation of the server. As your applications grow, separating your project into logical parts is essential.
+## Exploration
+Use `scratch.js` to explore requests, responses and the rest of the node HTTP module.
+It logs the following in the terminal:
+  * the request received by the server
+  * the response the server has sent
+You can alter the request object and see how the response changes.
+You can write code without tests here, but **you can't copy any code from the file.**
+You should be happy for all the code in `scratch.js` to be deleted at any point --
+it's for you to learn what's possible.
 
-Keeping the handlers separate also allows us to test it in isolation. This is important because we are not interested in Node HTTP's ability to trigger request events but whether or not the logic within the handler works as expected.
+## Testing
 
-We are using [shot](https://www.npmjs.com/package/shot) to inject requests to the handler. This means we do not have to start the server or make real HTTP requests through the network stack. Instead, we inject mock requests directly to the handler and receive mock responses that we can then test. This saves us A LOT of time (real HTTP requests are slow). 
+There's already one failing test.
+You can make it pass before you write your next test.
+Then, convert the spec of the problem into tests.
+You can pass each test as you write it or write all the tests then pass them all,
+whichever you prefer.
 
-You may want to read [these notes on using shot](http://hapijs.com/api#serverinjectoptions-callback) (and pay particular attention to the *payload* property, which is useful for testing HTTP POSTs).
+## Implement
+`handler.js` is the file you will need here.
 
-We have also introduced a model file for managing your data, which is currently empty. 
+## The Spec
 
-### Tools
-* We are writing acceptance tests using Mocha and Shot.
-* We are using node's core Assert module for assertions.
-* We are writing HTTP servers using node.
-
-### Commands
-
-* Install dependencies with ``` npm install ```
-* Start the server with ``` make s ``` or ```node server.js```
-* Run the tests with ``` make t ``` or ``` npm test ```
-
-(If you are not familiar with [Make](http://en.wikipedia.org/wiki/Make_(software)), you might want to read Mike Bostock's article, *[Why Use Make](http://bost.ocks.org/mike/make/)*).
+1. Visiting /name/richard should return an h1 containing richard.
+2. Posting a request to /post-at-me-bro should return the data that was posted
+3. Visiting /post-at-me-bro (a GET request) should return a div saying 'Post only plz :)'
