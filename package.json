@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/rjmk/test-setup#readme",
   "devDependencies": {
-    "shot": "^1.6.1",
-    "tape": "^4.2.0"
+    "bl": "1.0.2",
+    "tape": "^4.2.0",
+    "wreck": "7.0.0"
   }
 }

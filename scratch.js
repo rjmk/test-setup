@@ -1,19 +1,20 @@
 var http = require('http');
-var shot = require ('shot');
-
-var request = {
-  method: 'GET',
-  url: '/'
-}
+var wreck = require ('wreck');
 
 function handler (req, res) {
   console.log(req);
   res.end();
 }
 
-http.createServer(handler).listen(3000);
+var server = http.createServer(handler).listen(3000);
 
-shot.inject(handler, request, function (res) {
-  console.log('THE RESPONSE');
+wreck.get('http://localhost:3000/', function (err, res) {
+  console.log('>>>>>>>>>> THE RESPONSE');
   console.log(res);
+  console.log('>>>>>>>>>> END OF RESPONSE')
+
+  // if you prefer, remove this and close your server manually with
+  // ctrl-c
+  server.close()
 })
+
