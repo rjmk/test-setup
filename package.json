@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/rjmk/test-setup#readme",
   "devDependencies": {
-    "bl": "1.0.2",
-    "tape": "^4.2.0",
-    "wreck": "7.0.0"
+    "hyperquest": "^1.2.0",
+    "tape": "^4.2.0"
+  },
+  "dependencies": {
+    "concat-stream": "^1.5.1"
   }
 }

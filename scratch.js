@@ -1,5 +1,5 @@
 var http = require('http');
-var wreck = require ('wreck');
+var hyperquest = require ('hyperquest');
 
 function handler (req, res) {
   console.log(req);
@@ -8,7 +8,7 @@ function handler (req, res) {
 
 var server = http.createServer(handler).listen(3000);
 
-wreck.get('http://localhost:3000/', function (err, res) {
+hyperquest('http://localhost:3000/', function (err, res) {
   console.log('>>>>>>>>>> THE RESPONSE');
   console.log(res);
   console.log('>>>>>>>>>> END OF RESPONSE')
